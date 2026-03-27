@@ -1,6 +1,6 @@
 # SMM Panel Pro
 
-Production-ready starter for a full SMM panel built with Next.js, Tailwind CSS, MariaDB, JWT auth, and an external provider API.
+Production-ready starter for a full SMM panel built with Next.js, Tailwind CSS, Firebase Firestore, JWT auth, and an external provider API.
 
 ## Folder Setup
 
@@ -24,10 +24,9 @@ middleware.js
 ## Local Setup
 
 1. Copy `.env.example` to `.env.local`.
-2. Add MariaDB, JWT, and SMM provider credentials.
+2. Add Firebase Admin, JWT, and SMM provider credentials.
 3. Install dependencies with `npm install`.
-4. Import [database/schema.sql](/C:/Users/bilal/Documents/Smm/database/schema.sql) into phpMyAdmin.
-5. Run the app with `npm run dev`.
+4. Run the app with `npm run dev`.
 
 ## Backend API Routes
 
@@ -63,11 +62,11 @@ If your provider uses a different payload shape, update only this service layer 
 1. Push the project to GitHub.
 2. Import the repo into Vercel.
 3. Add the environment variables from `.env.example`.
-4. Add your MariaDB environment variables in the Vercel environment settings or use a managed MySQL/MariaDB service.
+4. Add your Firebase Admin credentials in the Vercel environment settings.
 
 ### VPS
 
-1. Install Node.js 20+ and make sure MariaDB is reachable from the server.
+1. Install Node.js 20+.
 2. Run `npm install`.
 3. Build with `npm run build`.
 4. Start with `npm run start`.
