@@ -61,6 +61,9 @@ export async function POST(request) {
       );
     }
 
-    return NextResponse.json({ error: "Registration failed." }, { status: 500 });
+    return NextResponse.json(
+      { error: error instanceof Error ? `Registration failed: ${error.message}` : "Registration failed." },
+      { status: 500 }
+    );
   }
 }

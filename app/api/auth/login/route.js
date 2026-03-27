@@ -63,6 +63,9 @@ export async function POST(request) {
       );
     }
 
-    return NextResponse.json({ error: "Login failed." }, { status: 500 });
+    return NextResponse.json(
+      { error: error instanceof Error ? `Login failed: ${error.message}` : "Login failed." },
+      { status: 500 }
+    );
   }
 }
