@@ -47,9 +47,16 @@ export async function POST(request) {
 
     return response;
   } catch (error) {
-    if (error instanceof Error && error.message.includes("MONGODB_URI")) {
+    if (
+      error instanceof Error &&
+      (error.message.includes("MONGODB_URI") ||
+        error.message.includes("FIREBASE_PROJECT_ID") ||
+        error.message.includes("FIREBASE_CLIENT_EMAIL") ||
+        error.message.includes("FIREBASE_PRIVATE_KEY") ||
+        error.message.includes("Firebase Admin credentials"))
+    ) {
       return NextResponse.json(
-        { error: "Server setup incomplete. Add MONGODB_URI to .env.local and restart the app." },
+        { error: "Server setup incomplete. Add the Firebase Admin environment variables and redeploy the app." },
         { status: 500 }
       );
     }
