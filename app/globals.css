@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+:root {
+  --background: #060606;
+  --background-soft: #0f0f10;
+  --surface: #161616;
+  --surface-strong: #1f1f20;
+  --foreground: #f7f4ea;
+  --muted: #aaa28d;
+  --border: rgba(255, 213, 74, 0.14);
+  --accent: #ffd54a;
+  --accent-strong: #ffbd12;
+  --accent-soft: rgba(255, 213, 74, 0.12);
+  --danger: #ff7a7a;
+  --success: #76e39c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(255, 213, 74, 0.14), transparent 28%),
+    linear-gradient(180deg, #050505 0%, #090909 50%, #050505 100%);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.glass-panel {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+  border: 1px solid var(--border);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(18px);
+}
+
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(255, 213, 74, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 213, 74, 0.06) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
